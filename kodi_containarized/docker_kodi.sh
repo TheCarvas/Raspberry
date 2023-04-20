@@ -3,7 +3,7 @@
 sudo mkdir $HOME/kodi
 sudo mkdir $HOME/kodi/home
 
-sudo cat <<EOF > $HOME/kodi/docker-compose.yml
+sudo cat <<EOF > $HOME/Raspberry/kodi_containarized/docker-compose.yml
 version: "3.7"
 services:
   rpi-kodi:
