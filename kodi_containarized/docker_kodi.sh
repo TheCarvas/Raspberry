@@ -3,13 +3,12 @@
 sudo mkdir $HOME/kodi
 sudo mkdir $HOME/kodi/home
 
-
 sudo cat <<EOF > $HOME/kodi/docker-compose.yml
 version: "3.7"
 services:
   rpi-kodi:
     #image: rimago/rpi-kodi
-    build:./rpi-dockerized-kodi
+    build: Docklerfile
     container_name: "kodi"
     user: kodi
     network_mode: host
@@ -27,6 +26,11 @@ services:
     environment:
       - PULSE_SERVER=127.0.0.1
 EOF
+
+sudo mkdir $HOME/kodi/home/.kodi
+sudo mkdir $HOME/kodi/home/.kodi/userdata/
+
+sudo chmod a+w $HOME/kodi/home/.kodi/userdata/
 
 sudo cat <<EOF > $HOME/kodi/home/.kodi/userdata/advancedsettings.xml
 <advancedsettings>
