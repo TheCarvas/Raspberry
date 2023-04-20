@@ -7,8 +7,8 @@ sudo cat <<EOF > $HOME/Raspberry/kodi_containarized/docker-compose.yml
 version: "3.7"
 services:
   rpi-kodi:
-    #image: rimago/rpi-kodi
-    build: Docklerfile
+    image: thecarvas/rpi-kodi
+    build: .
     container_name: "kodi"
     user: kodi
     network_mode: host
