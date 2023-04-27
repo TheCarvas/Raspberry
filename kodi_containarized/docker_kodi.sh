@@ -18,7 +18,7 @@ services:
       - /dev/fb0:/dev/fb0
       - /dev/vchiq:/dev/vchiq
     volumes:
-      - /home/raspbian/kodi/home:/home/kodi
+      - $HOME/kodi/home:/home/kodi
       - "/etc/timezone:/etc/timezone:ro"
       - "/etc/localtime:/etc/localtime:ro"
     tmpfs:
