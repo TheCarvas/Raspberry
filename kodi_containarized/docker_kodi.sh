@@ -37,6 +37,8 @@ sudo cat <<EOF > $HOME/kodi/home/.kodi/userdata/advancedsettings.xml
     <services>
         <esallinterfaces>true</esallinterfaces>
         <webserver>true</webserver>
+        <webserverport default="true">8080</webserverport>
+        <webserverpassword>1234</webserverpassword>
         <zeroconf>true</zeroconf>
     </services>
 </advancedsettings>
