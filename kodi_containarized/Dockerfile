@@ -98,10 +98,11 @@ RUN sudo apt-get install python3-pip python3-crypto build-essential python3-all-
     apt-get -y --purge autoremove                                                           && \
     rm -r -f /var/lib/apt/lists/*
 
-RUN groupadd -g 9002 kodi && useradd -u 9002 -r -g kodi kodi && usermod -a -G video kodi
+RUN groupadd -g 9002 kodi && useradd -u 9002 -r -g kodi kodi && usermod -a -G audio,video,input,dialout,plugdev,users,cdrom,tty,systemd-journal  kodi
 
 ADD /asound.conf /etc/asound.conf
 
 # setup entry point
 COPY entrypoint.sh /usr/local/bin
+RUN chmod +x /usr/local/bin/entrypoint.sh
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
