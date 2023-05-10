@@ -18,6 +18,7 @@ services:
       - /dev/fb0:/dev/fb0
       - /dev/vchiq:/dev/vchiq
     volumes:
+      - /run/udev/data:/run/udev/data
       - $HOME/kodi/home:/home/kodi
       - "/etc/timezone:/etc/timezone:ro"
       - "/etc/localtime:/etc/localtime:ro"
@@ -42,6 +43,40 @@ sudo cat <<EOF > $HOME/kodi/home/.kodi/userdata/advancedsettings.xml
         <zeroconf>true</zeroconf>
     </services>
 </advancedsettings>
+EOF
+
+
+sudo cat <<EOF > $HOME/kodi/home/.kodi/userdata/sources.xml
+<sources>
+    <programs>
+        <default pathversion="1"></default>
+    </programs>
+    <video>
+        <default pathversion="1"></default>
+    </video>
+    <music>
+        <default pathversion="1"></default>
+    </music>
+    <pictures>
+        <default pathversion="1"></default>
+    </pictures>
+    <files>
+        <default pathversion="1"></default>
+        <source>
+            <name>tikipeter</name>
+            <path pathversion="1">https://tikipeter.github.io/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+        <source>
+            <name>nixgatepackages</name>
+            <path pathversion="1">https://nixgates.github.io/packages/</path>
+            <allowsharing>true</allowsharing>
+        </source>
+    </files>
+    <games>
+        <default pathversion="1"></default>
+    </games>
+</sources>
 EOF
 
 
