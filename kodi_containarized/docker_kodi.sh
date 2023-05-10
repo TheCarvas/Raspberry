@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo chown -R $USER:$USER $HOME/Raspberry/kodi_containarized
+
 sudo mkdir $HOME/kodi
 sudo mkdir $HOME/kodi/home
 
